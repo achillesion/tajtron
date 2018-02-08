@@ -15,26 +15,51 @@
     <link href="assets/css/custom-styles.css" rel="stylesheet"/>
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            background-image: url("assets/images/dago.jpg") ;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        .panel{
+            opacity: 0.677;
+
+
+        }
+        .panel-heading{
+            opacity: 0.7;
+
+
+        }
+
+
+    </style>
 </head>
 
 <body>
 <div class="container">
 
     <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
-        <br><br><br><br><br><br><br>
-        <div class="row">
-            <div class="col-md-5"></div>
-            <div class="col-md-2">
-                <img src="assets/images/mainlogo.jpg">
-            </div>
-            <div class="col-md-5"></div>
-        </div>
+        <br><br><br>
+
 
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title text-center">Welcome to Almujahidpress</div>
             </div>
-
+            <br>
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-2">
+                    <img src="assets/images/mainlogo.png">
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+            <br><br><br>
             <div class="panel-body">
 
                 <form name="form" id="form" action="controllers/login.php" class="form-horizontal" enctype="multipart/form-data"
@@ -55,7 +80,7 @@
                         <!-- Button -->
                         <div class="col-sm-12 controls ">
                             <br>
-                            <button type="submit" href="#" class="btn btn-primary pull-right "><i
+                            <button type="submit" href="#" class="btn btn-primary center-block"><i
                                     class="glyphicon glyphicon-log-in"></i> Log in
                             </button>
                         </div>
