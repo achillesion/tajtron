@@ -1,7 +1,7 @@
 <?php
 
 // Coonection | User | Pasword | Database
-$con = mysqli_connect("localhost","looptelp_tajtron","jaytron69","looptelp_tajtron");
+$con = mysqli_connect("localhost","tajtron","jaytron69","looptelp_tajtron");
 
 // Check connection
 if (mysqli_connect_errno())

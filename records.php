@@ -56,7 +56,8 @@ include 'inc/sidebar.php';
                                         <th>Do Number</th>
                                         <th>Do Date</th>
                                         <th>Date</th>
-                                        <th>View</th>
+
+                                        <th>Print</th>
                                         <th>Delete</th>
                                     </tr>
                                     </thead>
@@ -82,8 +83,9 @@ include 'inc/sidebar.php';
                                                 <td><?= $row['do'] ?></td>
                                                 <td><?= $row['do_date'] ?></td>
                                                 <td><?= $row['date'] ?></td>
-                                                <td><a href="print2.php?sr=<?php echo $serial; ?>">View</a></td>
-                                                <td><a href="Delete.php?sr=<?php echo $serial; ?>"
+
+                                                <td><a href="print2.php?sr=<?php echo $serial; ?>">Print</a></td>
+                                                <td><a  href="Delete.php?sr=<?php echo $serial; ?> "
                                                        onclick="return confirm('Are you sure?')">Delete</a></td>
                                             </tr>
                                         <?php }

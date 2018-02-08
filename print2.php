@@ -266,4 +266,7 @@ include 'controllers/connect.php';
 		For Almujahid Press
         </div>
     </div>
-        
+
+        <script>
+            window.print();
+        </script>
