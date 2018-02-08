@@ -1,0 +1,2 @@
+[06-Feb-2018 08:48:03 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/looptelp/public_html/jaytronlabs.com/products/tajtron/controllers/login.php on line 15
+[06-Feb-2018 08:48:03 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/looptelp/public_html/jaytronlabs.com/products/tajtron/controllers/login.php on line 18

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Al Mujahid Press</title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+</head>
+
+<body>
+<div class="container">
+
+    <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+        <br><br><br><br><br><br><br>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2">
+                <img src="assets/images/mainlogo.jpg">
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title text-center">Welcome to Almujahidpress</div>
+            </div>
+
+            <div class="panel-body">
+
+                <form name="form" id="form" action="controllers/login.php" class="form-horizontal" enctype="multipart/form-data"
+                      method="POST">
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="user" type="text" class="form-control" name="username" value="" placeholder="User">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="password" type="password" class="form-control" name="password"
+                               placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="col-sm-12 controls ">
+                            <br>
+                            <button type="submit" href="#" class="btn btn-primary pull-right "><i
+                                    class="glyphicon glyphicon-log-in"></i> Log in
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

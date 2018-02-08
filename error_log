@@ -1,0 +1,7 @@
+[06-Feb-2018 12:07:57 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/looptelp/public_html/jaytronlabs.com/products/tajtron/print2.php on line 60
+[06-Feb-2018 12:08:34 America/New_York] PHP Parse error:  syntax error, unexpected '>' in /home/looptelp/public_html/jaytronlabs.com/products/tajtron/print2.php on line 60
+[06-Feb-2018 12:09:06 America/New_York] PHP Parse error:  syntax error, unexpected '>' in /home/looptelp/public_html/jaytronlabs.com/products/tajtron/print2.php on line 60
+[06-Feb-2018 12:11:20 America/New_York] PHP Notice:  Undefined variable: id in /home/looptelp/public_html/jaytronlabs.com/products/tajtron/print2.php on line 55
+[06-Feb-2018 12:12:13 America/New_York] PHP Parse error:  syntax error, unexpected '$id' (T_VARIABLE), expecting ',' or ';' in /home/looptelp/public_html/jaytronlabs.com/products/tajtron/print2.php on line 55
+[06-Feb-2018 13:02:27 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/looptelp/public_html/jaytronlabs.com/products/tajtron/print2.php on line 277
+[06-Feb-2018 13:03:17 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/looptelp/public_html/jaytronlabs.com/products/tajtron/print2.php on line 279
