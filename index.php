@@ -15,7 +15,7 @@ include 'inc/sidebar.php';
                 <div class="col-md-12">
                     <h1 class="page-header">
                         Dashboard
-                        <small>Printing Press</small>
+                        <small>Almujahid Printing Press</small>
                     </h1>
                 </div>
             </div>
