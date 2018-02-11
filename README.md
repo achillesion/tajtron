@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## This is an Open Source Point of sale system.
 
 You can use the [editor on GitHub](https://github.com/achillesion/tajtron/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
