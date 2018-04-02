@@ -1,13 +1,7 @@
 <?php
 
 // Coonection | User | Pasword | Database
-
-$db_host        = 'sql12.freemysqlhosting.net';
-$db_user        = 'sql12220763';
-$db_pass        = 'ARjQpgyv5a';
-$db_database    = 'sql12220763';
-$db_port        = '3306';
-$con = mysqli_connect($db_host,$db_user ,$db_pass ,$db_database );
+$con = mysqli_connect("localhost","looptelp_tajtron","jaytron69","looptelp_tajtron");
 
 // Check connection
 if (mysqli_connect_errno())

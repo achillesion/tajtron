@@ -6,92 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Al Mujahid Press</title>
     <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
-    <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
-    <!-- Morris Chart Styles-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
-    <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
-    <!-- Google Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
 
-    <style>
-        body{
-            margin: 0px;
-            padding: 0px;
-            background-image: url("assets/images/dago.jpg") ;
-            -webkit-background-size: cover;
-            background-size: cover;
-        }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/signIn.css">
 
-        .panel{
-            opacity: 0.677;
-
-
-        }
-        .panel-heading{
-            opacity: 0.7;
-
-
-        }
-
-
-    </style>
 </head>
 
-<body>
-<div class="container">
+<body class="text-center">
 
-    <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
-        <br><br><br>
-
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title text-center">Welcome to Almujahidpress</div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-5"></div>
-                <div class="col-md-2">
-                    <img src="assets/images/mainlogo.png">
-                </div>
-                <div class="col-md-5"></div>
-            </div>
-            <br><br><br>
-            <div class="panel-body">
-
-                <form name="form" id="form" action="controllers/login.php" class="form-horizontal" enctype="multipart/form-data"
-                      method="POST">
-
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="user" type="text" class="form-control" name="username" value="" placeholder="User">
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password"
-                               placeholder="Password">
-                    </div>
-
-                    <div class="form-group">
-                        <!-- Button -->
-                        <div class="col-sm-12 controls ">
-                            <br>
-                            <button type="submit" href="#" class="btn btn-primary center-block"><i
-                                    class="glyphicon glyphicon-log-in"></i> Log in
-                            </button>
-                        </div>
-                    </div>
-
-                </form>
-
-            </div>
-        </div>
+<form class="form-signin" action="controllers/login.php" class="form-horizontal" enctype="multipart/form-data"
+      method="POST">
+    <img class="mb-4" src="assets/images/mainlogo.png" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="user" class="sr-only">Email address</label>
+    <input id="user" type="text" class="form-control" name="username" value="" placeholder="User">
+    <label for="password" class="sr-only">Password</label>
+    <input id="password" type="password" class="form-control" name="password"
+           placeholder="Password">
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
     </div>
-</div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+    <p></p><p class="mt-5 mb-3 text-muted">Almujahid Press Point of Sale&copy; 2017-2018</p>
+</form>
+
 
 </body>
 </html>

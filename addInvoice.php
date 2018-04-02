@@ -1,10 +1,7 @@
 <?php
 include 'inc/header.php';
 include 'inc/sidebar.php';
-?>
-
-
-<?php
+require 'controllers/connect.php';
 
 // php script for showing current date
 
@@ -14,233 +11,238 @@ $d = date_format($test, 'd-m-Y ');
 //echo date_format($test, 'Y-m-d ');
 $t = date_format($test, 'h:i a');
 
-require 'controllers/connect.php';
-
 
 ?>
+
 <body onload="">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+</script>
+
 <div id="wrapper">
-    <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
-        <div id="page-inner" style="width: 800px;">
-
-
+        <div id="page-inner">
             <form action="controllers/addInvoice.php" onsubmit="ValidateForm()" method="post">
                 <div class="row">
-                    <div class="col-md-4"><label>SR No: </label></div>
-                    <div class="col-md-4">
-                        <label>Tax invoice / فاتورة ضريبية </label>
+
+                    <div class="col-md-12">
+                        <!-- Customer Name -->
+                        <div class="form-group">
+                            <label for="name">Customer Name</label>
+                            <input type="name" class="form-control" name="name" required>
+                        </div>
                     </div>
-                    <div class="col-md-4"><label for="date">Date: </label><input type="text" name="date"
-                                                                                 placeholder="<?php echo $d; ?>"></div>
-                </div>
 
 
-                <!-- form -->
-
-                <div class="row">
-                    <!--Customer Name-->
                     <div class="col-md-6">
-                        <table id="meta">
-                            <tr style="height: 90px;">
-                                <td class="meta-head">Mr/Ms:</td>
-                                <td><textarea name="name" class="osk-trigger"></textarea></td>
-                            </tr>
-                        </table>
+                        <!-- Party Account Code -->
+                        <div class="form-group">
+                            <label for="name">Party Account Code</label>
+                            <input type="name" class="form-control" name="code" required>
+                        </div>
+
+                        <!-- Date -->
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="name" class="form-control datepicker" name="date"
+                                   placeholder="<?php echo $d; ?>">
+                        </div>
                     </div>
 
-                    <!--Customer Data-->
-                    <div class="col-md-6">
-                        <table id="meta">
-                            <tr>
-
-                                <td class="meta-head">Part A/C Code</td>
-                                <td colspan="3"><textarea id="jnname=" name="code"></textarea></td>
-
-
-                            </tr>
-                            <tr>
-
-                                <td class="meta-head">L.P.O.</td>
-                                <td><textarea name="lpo"></textarea></td>
-                                <td class="meta-head">Date</td>
-                                <td><textarea id="date" name="lpodate"><?php echo $d; ?></textarea></td>
-                            </tr>
-
-                            <tr>
-                                <td class="meta-head">D.O</td>
-                                <td><textarea name="do"></textarea></td>
-                                <td class="meta-head">Date</td>
-                                <td><textarea id="date" name="dodate"><?php echo $d; ?></textarea></td>
-                            </tr>
-                        </table>
-
+                    <div class="col-md-3">
+                        <!-- LPO -->
+                        <div class="form-group">
+                            <label for="lpo">LPO</label>
+                            <input type="name" class="form-control" name="lpo">
+                        </div>
+                        <!-- DO -->
+                        <div class="form-group">
+                            <label for="do">Do</label>
+                            <input type="name" class="form-control" name="do">
+                        </div>
                     </div>
 
-                </div>
+                    <div class="col-md-3">
+                        <!-- LPO -->
+                        <div class="form-group">
+                            <label for="lpodate">Date</label>
+                            <input type="name" class="form-control datepicker" name="lpodate"
+                                   placeholder="<?php echo $d; ?>">
+                        </div>
+                        <!-- DO -->
+                        <div class="form-group">
+                            <label for="dodate">Date</label>
+                            <input type="name" class="form-control datepicker" name="dodate"
+                                   placeholder="<?php echo $d; ?>">
+                        </div>
+                    </div>
 
+                    <!-- Conetnts Table-->
+                    <div class="col-md-12">
+                        <table id="myTable" border="1" style="border-collapse:collapse;width:100%;border-radius:5px;">
+                            <tbody>
+                            <tr align="center">
+                                <td rowspan="2" style="width: 20px;">رقم الصنف <br>
+                                    Item No
+                                </td>
+                                <td rowspan="2"> Description الـتـفـاصـيــــــل</td>
+                                <td rowspan="2">Quantity الكمية</td>
+                                <td colspan="2">سعر الوحدة <br>
+                                    Unit Price
+                                </td>
 
-                <div class="col-md-8">
-                    <table id="myTable" border="1" style="border-collapse:collapse;width:100%;border-radius:5px;">
-                        <tbody>
-                        <tr align="center">
-                            <td rowspan="2" style="width: 20px;">رقم الصنف <br>
-                                Item No
-                            </td>
-                            <td rowspan="2"> Description الـتـفـاصـيــــــل</td>
-                            <td rowspan="2">Quantity الكمية</td>
-                            <td colspan="2">سعر الوحدة <br>
-                                Unit Price
-                            </td>
-
-                            <td colspan="2">المبلغ الإجمالي <br>
-                                Total Amount
-                            </td>
-                        </tr>
-                        <tr align="center">
-                            <td>درهم.<br>
-                                Dhs.
-                            </td>
-                            <td>فلس <br>
-                                Fils
-                            </td>
-                            <td>درهم. <br>
-                                Dhs.
-                            </td>
-                            <td>فلس <br>
-                                Fils
-                            </td>
-                        </tr>
-
-                        <tr align="center">
-
-                            <td>1</td>
-                            <td class="description"><textarea placeholder="Description" name="item_name[]"></textarea>
-                            </td>
-                            <td><textarea onchange="costCalculation(2)" id="qty" class="qty" placeholder="Quantity"
-                                          name="item_quantity[]"></textarea></td>
-                            <td><textarea onchange="costCalculation(2)" id="cos" class="cost" placeholder="Cost"
-                                          name="item_cost[]"></textarea></td>
-
-                            <td><textarea onchange="costCalculation(2)" id="ufils" placeholder="Cost"
-                                          name="CostFils[]"></textarea></td>
-                            <td><span id="Totdhs" class="price">0</span></td>
-                            <td><span id="Totfils" class="price">0</span></td>
-
-
-                        </tr>
-
-                        <tr>
-                            <td colspan="5">Sub Total</td>
-                            <td id="subtotdhs" align="center">
-
-                            </td>
-                            <td id="subtotfils" align
-                            "="center"></td>
-                        </tr>
-
-
-                        <tr>
-                            <td colspan="5">VAT</td>
-                            <td id="vatdhs" align="center">
-
-                            </td>
-                            <td id="vatfills" align="center"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="5">Net Amount</td>
-                            <td id="netdhs" align="center">
-
-                            </td>
-                            <td id="netfils" align="center"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                
-               
-
-
-                <!--<div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <table id="items">
-
-                            <tr>
-                                <th>items</th>
-                                <th>Description</th>
-                                <th>Unit Cost(د.إ)</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
+                                <td colspan="2">المبلغ الإجمالي <br>
+                                    Total Amount
+                                </td>
+                            </tr>
+                            <tr align="center">
+                                <td>درهم.<br>
+                                    Dhs.
+                                </td>
+                                <td>فلس <br>
+                                    Fils
+                                </td>
+                                <td>درهم. <br>
+                                    Dhs.
+                                </td>
+                                <td>فلس <br>
+                                    Fils
+                                </td>
                             </tr>
 
-                            <tr class="item-row">
+                            <tr align="center">
+
                                 <td>1</td>
                                 <td class="description"><textarea placeholder="Description"
-                                                                  name="description[]"></textarea></td>
-                                <td><textarea id="cost" class="cost" placeholder="Cost" name="cost[]"></textarea></td>
-                                <td><textarea id="qty" class="qty" placeholder="Quantity" name="qty[]"></textarea></td>
-                                <td><span id price class="price">0</span></td>
-                            </tr>
-
-
-                            <tr id="hiderow">
-                                <td colspan="5"><a id="addrow" href="javascript:;" title="Add a row">Add a row</a></td>
-                            </tr>
-
-                            <tr>
-                                <td colspan="2" class="blank"></td>
-                                <td colspan="2"id="Subtotals" class="total-line">Subtotal</td>
-                                <td class="total-value">
-                                    <div id="subtotal"></div>
+                                                                  name="item_name[]"></textarea>
                                 </td>
-                            </tr>
-                            <tr>
+                                <td><textarea onchange="costCalculation(2)" id="qty" class="qty" placeholder="Quantity"
+                                              name="item_quantity[]"></textarea></td>
+                                <td><textarea onchange="costCalculation(2)" id="cos" class="cost" placeholder="Cost"
+                                              name="item_cost[]"></textarea></td>
 
-                                <td colspan="2" class="blank"></td>
-                                <td colspan="2" class="total-line">Total</td>
-                                <td class="total-value">
-                                    <div id="total"></div>
+                                <td><textarea onchange="costCalculation(2)" id="ufils" placeholder="Cost"
+                                              name="CostFils[]"></textarea></td>
+                                <td><span id="Totdhs" class="price">0</span></td>
+                                <td><span id="Totfils" class="price">0</span></td>
+
+
+                            </tr>
+
+                            <tr>
+                                <td colspan="5">Sub Total</td>
+                                <td id="subtotdhs" align="center">
+
                                 </td>
+                                <td id="subtotfils" align
+                                "="center"></td>
                             </tr>
-                            <tr>
-                                <td colspan="2" class="blank"></td>
-                                <td colspan="2" class="total-line">Amount Paid</td>
 
-                                <td class="total-value"><textarea id="paid" name="totalpaid"
-                                                                  placeholder="د.إ"></textarea></td>
-                            </tr>
+
                             <tr>
-                                <td colspan="2" class="blank"></td>
-                                <td colspan="2" class="total-line balance">Balance Due</td>
-                                <td class="total-value balance">
-                                    <div class="due"></div>
+                                <td colspan="5">VAT</td>
+                                <td id="vatdhs" align="center">
+
                                 </td>
+                                <td id="vatfills" align="center"></td>
                             </tr>
+                            <tr>
+                                <td colspan="5">Net Amount</td>
+                                <td id="netdhs" align="center">
 
+                                </td>
+                                <td id="netfils" align="center"></td>
+                            </tr>
+                            </tbody>
                         </table>
-
                     </div>
-                    <div class="col-md-1"></div>
-                </div>
--->
-<div class="clearfix"></div>
 
-                <div class="row">
-                    <div class="col-md-4"><br>
-                        <button type="button" class=" btn btn-success" onclick="onLoad()"
-                                style="font-size: 20px; height: 40px">Add
-                        </button>
+
+                    <!--<div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <table id="items">
+
+                                <tr>
+                                    <th>items</th>
+                                    <th>Description</th>
+                                    <th>Unit Cost(د.إ)</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                </tr>
+
+                                <tr class="item-row">
+                                    <td>1</td>
+                                    <td class="description"><textarea placeholder="Description"
+                                                                      name="description[]"></textarea></td>
+                                    <td><textarea id="cost" class="cost" placeholder="Cost" name="cost[]"></textarea></td>
+                                    <td><textarea id="qty" class="qty" placeholder="Quantity" name="qty[]"></textarea></td>
+                                    <td><span id price class="price">0</span></td>
+                                </tr>
+
+
+                                <tr id="hiderow">
+                                    <td colspan="5"><a id="addrow" href="javascript:;" title="Add a row">Add a row</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2" class="blank"></td>
+                                    <td colspan="2"id="Subtotals" class="total-line">Subtotal</td>
+                                    <td class="total-value">
+                                        <div id="subtotal"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td colspan="2" class="blank"></td>
+                                    <td colspan="2" class="total-line">Total</td>
+                                    <td class="total-value">
+                                        <div id="total"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="blank"></td>
+                                    <td colspan="2" class="total-line">Amount Paid</td>
+
+                                    <td class="total-value"><textarea id="paid" name="totalpaid"
+                                                                      placeholder="د.إ"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="blank"></td>
+                                    <td colspan="2" class="total-line balance">Balance Due</td>
+                                    <td class="total-value balance">
+                                        <div class="due"></div>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </div>
+                        <div class="col-md-1"></div>
                     </div>
-                    <div class="col-md-4"><br>
-                        <input type="button" onclick="myDeleteFunction()" class=" btn btn-danger" name="submit"
-                               value="Delete Row"
-                               style="font-size: 20px" style="height: 70px"/></div>
-                    <div class="col-md-4"><br>
-                        <input type="submit" class=" btn btn-info" name="submit" value="Save & Submitt"
-                               style="font-size: 20px" style="height: 70px"/></div>
-                </div>
+    -->
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                        <div class="col-md-4"><br>
+                            <button type="button" class=" btn btn-success btn-md" onclick="onLoad()"
+                                    style="font-size: 20px; height: 40px">Add
+                            </button>
+                        </div>
+                        <div class="col-md-4"><br>
+                            <input type="button" onclick="myDeleteFunction()" class=" btn btn-danger btn-md"
+                                   name="submit"
+                                   value="Delete Row"
+                                   style="font-size: 20px" style="height: 70px"/></div>
+                        <div class="col-md-4"><br>
+                            <input type="submit" class=" btn btn-info btn-lg" name="submit" value="Save & Submitt"
+                                   style="font-size: 20px" style="height: 70px"/></div>
+                    </div>
             </form>
             <!-- /. ROW  -->
         </div>
@@ -251,6 +253,7 @@ require 'controllers/connect.php';
 </body>
 
 <script>
+
 
     var index = 3;
     var table = document.getElementById("myTable");
@@ -281,6 +284,7 @@ require 'controllers/connect.php';
         index++;
         // Cell1.innerhtml = temp;
     }
+
     function myDeleteFunction() {
 
         if (index > 2) {
@@ -380,7 +384,7 @@ require 'controllers/connect.php';
             return false;
         }
     }
-    
+
 </script>
 
 
@@ -399,3 +403,10 @@ require 'controllers/connect.php';
 <!--<!-- Custom Js -->-->
 <!--<script src="assets/js/custom-scripts.js"></script>-->
 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+</script>

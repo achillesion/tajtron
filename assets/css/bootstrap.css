@@ -1,3 +1,8 @@
+textarea{
+  margin-top: 10px !important;
+}
+
+
 /*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
@@ -286,6 +291,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  
 }
 a {
   color: #428bca;

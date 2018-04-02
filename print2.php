@@ -22,7 +22,7 @@ include 'controllers/connect.php';
 
     <link rel="shortcut icon" href="images/icon.png"/>
 
-    <script src="assets/js/jquery-1.10.2.js"></script>
+
     <!--Stylesheet for Add Invoice Module-->
     <link rel="stylesheet" href="assets/css/styleAddInvoice.css">
 
@@ -30,8 +30,6 @@ include 'controllers/connect.php';
     <style type="text/css" media="all">
 
     </style>
-    <script  type="text/javascript" src="assets/js/printThis.js"> </script>
-
 
 </head>
 
@@ -45,7 +43,7 @@ include 'controllers/connect.php';
     <div>
         <div style="width:100%;">
             <img class="img-responsive" style="margin-top: 0px; width: 100%;height: 100px; background-size: contain; "
-                 src="http://jaytronlabs.com/v4/POSS/uploads/invoice-layout-naveed.jpg">
+                 src="assets/images/invoice-layout-naveed.jpg">
         </div>
 
         <div class="clearfix"></div>
@@ -165,7 +163,6 @@ include 'controllers/connect.php';
                 $row_total = number_format($row['quantity'] * $row['cost'], 2, '.', '');
                 $row_total_arr = explode('.', $row_total);
                 $total = $total + $row_total;
-                $love = $total;
                 ?>
                 <tr align="center">
                     <td><?= $count; ?></td>
@@ -244,14 +241,10 @@ include 'controllers/connect.php';
                 echo $vat_arr[0];
                 ?>
             </td>
-            <input type="text" name="number" value="<?php $total ?>">
-
-
-
             <td align="center"><?= $vat_arr[1]; ?></td>
         </tr>
         <tr>
-            <td colspan="5">Net Amount <span id="word" ></span></td>
+            <td colspan="5">Net Amount</td>
             <td align="center">
                 <?= $total_arr[0] ?>
             </td>
@@ -260,12 +253,7 @@ include 'controllers/connect.php';
         </tbody>
     </table>
     <div>
-        <script>
-
-
-
-
-        </script>
+    
     <div class="last">
     <br><br><br>
     <div class="" style="margin-left: 100px;"></div>
@@ -278,10 +266,4 @@ include 'controllers/connect.php';
 		For Almujahid Press
         </div>
     </div>
-
-        <script>
-            var x = document.getElementById("word");
-            alert();
-            $("#word").innerHTML=Hello World;
-            window.print();
-        </script>
+        
